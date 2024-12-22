@@ -54,7 +54,7 @@ class _TaskViewState extends State<TaskView> {
                   widgetChild: (tasks.isNotEmpty)
                       ? ListView.builder(
                         shrinkWrap: true,
-                          physics: const AlwaysScrollableScrollPhysics(),
+                          physics: const ScrollPhysics(),
                           padding: const EdgeInsets.symmetric(
                               vertical: AppPadding.p6,
                               horizontal: AppPadding.p12),
