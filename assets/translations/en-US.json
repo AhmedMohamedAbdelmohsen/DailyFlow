@@ -53,5 +53,9 @@
   "loginError": "The user e-mail or password provided is incorrect.",
   "emptyPassword": "please enter password",
   "emptyEmail": "please enter email",
-  "rememberMe": "Remember Me"
+  "rememberMe": "Remember Me",
+  "hello": "Hello,",
+  "emptyListDesc": "Click on the “add task” button at the bottom to create a new task",
+  "empty": "Empty",
+  "expiredSession": "Your session has expired, Please Login again"
 }

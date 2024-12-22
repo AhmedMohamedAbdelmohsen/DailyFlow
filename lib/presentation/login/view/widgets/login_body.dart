@@ -38,6 +38,7 @@ class _LoginBodyState extends State<LoginBody> {
   String? passwordErrorMsg;
   bool isAllValid = false;
   Key loginCubitKey = UniqueKey();
+  bool _isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -140,8 +141,12 @@ class _LoginBodyState extends State<LoginBody> {
                                       fontSize: AppSize.s15.sp,
                                     ),
                                   ),
-                                  value: true,
-                                  onChanged: (bool? value) {},
+                                  value: _isChecked,
+                                  onChanged: (bool? value) {
+                                    setState(() {
+                                      _isChecked = value ?? false; // Update the state when changed
+                                    });
+                                  },
                                   controlAffinity:
                                       ListTileControlAffinity.leading,
                                 ),

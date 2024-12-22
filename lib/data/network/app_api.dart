@@ -14,10 +14,10 @@ abstract class AppServiceClient {
   @POST("/users/login?${Constants.apikey}")
   Future<LoginResponse> login(@Body() LoginRequest loginRequest);
 
-  @POST("/api/users/{id}/todos?${Constants.apikey}")
+  @POST("/users/{id}/todos?${Constants.apikey}")
   Future<TaskResponse> addTask(
       @Path("id") int id, @Body() TaskResponse request);
 
-  @GET("/api/users/{id}/todos?${Constants.apikey}")
+  @GET("/users/{id}/todos?${Constants.apikey}")
   Future<List<TaskResponse>> getAllTasks(@Path("id") int id);
 }

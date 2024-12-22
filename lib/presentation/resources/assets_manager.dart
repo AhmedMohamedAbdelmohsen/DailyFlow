@@ -5,11 +5,15 @@ const String jsonPath = "assets/json";
 class ImageAssets {
   static const logo = "assets/logo.png";
   static const logoForeground = "assets/logo_foreground.png";
+  static const emptyList = "$imagePath/empty_list.svg";
 }
 
 class IconAssets {
   static const eye = "$iconPath/eye.svg";
   static const eyeOff = "$iconPath/eye_off.svg";
+  static const calendar = "$iconPath/calendar.svg";
+  static const notification = "$iconPath/notification.svg";
+  static const avatar = "$iconPath/avatar.svg";
 }
 
 class JsonAssets {

@@ -54,5 +54,9 @@ abstract class  LocaleKeys {
   static const english = 'english';
   static const loginError = 'loginError';
   static const rememberMe = 'rememberMe';
+  static const hello = 'hello';
+  static const empty = 'empty';
+  static const emptyListDesc = 'emptyListDesc';
+  static const expiredSession = 'expiredSession';
 
 }

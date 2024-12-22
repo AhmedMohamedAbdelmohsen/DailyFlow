@@ -1,4 +1,5 @@
 import 'package:daily_flow/data/responses/task/task_response.dart';
+import 'package:flutter/material.dart';
 
 class TaskMainModel {
   int id;
@@ -18,6 +19,7 @@ class TaskModel {
   num completed;
   String author;
   String message;
+  Color? color;
   MetaModel? meta;
 
   TaskModel(
@@ -32,7 +34,9 @@ class TaskModel {
     this.author,
     this.message,
     this.meta,
-  );
+      {
+    this.color,
+  });
 }
 
 class MetaModel {

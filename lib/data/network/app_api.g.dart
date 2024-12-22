@@ -62,7 +62,7 @@ class _AppServiceClient implements AppServiceClient {
     )
             .compose(
               _dio.options,
-              '/api/users/${id}/todos?apikey=31eb6a71-a8a6-4810-9d08-7b1ba5d24362',
+              '/users/${id}/todos?apikey=31eb6a71-a8a6-4810-9d08-7b1ba5d24362',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -85,7 +85,7 @@ class _AppServiceClient implements AppServiceClient {
     )
             .compose(
               _dio.options,
-              '/api/users/${id}/todos?apikey=31eb6a71-a8a6-4810-9d08-7b1ba5d24362',
+              '/users/${id}/todos?apikey=31eb6a71-a8a6-4810-9d08-7b1ba5d24362',
               queryParameters: queryParameters,
               data: _data,
             )

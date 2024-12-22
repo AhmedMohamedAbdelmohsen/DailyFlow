@@ -74,7 +74,7 @@ class RepositoryImpl extends Repository {
       try {
         // its connected to internet, its safe to call API
         final response = await _remoteDataSource.getAllTasks(id);
-        if (response.isNotEmpty) {
+        if (response != null) {
           // success return data
           return Right((response.map((data) => data.toDomain()))
               .cast<TaskModel>()
