@@ -1,11 +1,13 @@
-import 'package:daily_flow/domain/model/main/main_model.dart';
-
 class LoginModel {
-  String jwtToken;
-  MessageModel? message;
+  num id;
+  String name;
+  String email;
+  num enabled;
+  String token;
+  String message;
+  num admin;
+  num warnings;
 
-  LoginModel(
-    this.jwtToken,
-    this.message,
-  );
+  LoginModel(this.id, this.name, this.email, this.enabled, this.token,
+      this.message, this.admin, this.warnings);
 }

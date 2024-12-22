@@ -1,3 +1,7 @@
+import 'package:daily_flow/domain/usecase/task/create_task_usecase.dart';
+import 'package:daily_flow/domain/usecase/task/task_usecase.dart';
+import 'package:daily_flow/presentation/add_scheduler/manager/add_task_cubit.dart';
+import 'package:daily_flow/presentation/home/manager/task_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -54,6 +58,21 @@ initLoginModule() {
   }
 }
 
+initTaskModule() {
+  if (!GetIt.I.isRegistered<TaskUseCase>()) {
+    instance.registerFactory<TaskUseCase>(() => TaskUseCase(instance()));
+    instance.registerFactory<TaskCubit>(() => TaskCubit(instance()));
+  }
+}
+
+initAddTaskModule() {
+  if (!GetIt.I.isRegistered<CreateTaskUseCase>()) {
+    instance.registerFactory<CreateTaskUseCase>(
+        () => CreateTaskUseCase(instance()));
+    instance.registerFactory<AddTaskCubit>(() => AddTaskCubit(instance()));
+  }
+}
+
 resetModules() {
   instance.reset(dispose: false);
   initAppModule();
@@ -68,4 +87,6 @@ Future<void> resetModulesFirstTime() async {
 
 resetDi() {
   initLoginModule();
+  initTaskModule();
+  initAddTaskModule();
 }

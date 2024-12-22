@@ -51,7 +51,7 @@ class _SplashViewState extends State<SplashView>
     );
 
     _animation =
-        Tween<double>(begin: 10.0, end: 1).animate(_animationController);
+        Tween<double>(begin: AppSize.s10, end: AppSize.s1).animate(_animationController);
 
     _animation.addListener(() {
       setState(() {});
@@ -78,7 +78,7 @@ class _SplashViewState extends State<SplashView>
     // hideStatusBar();
 
     return Scaffold(
-      backgroundColor: ColorManager.darkGreyBlue,
+      backgroundColor: ColorManager.white,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(AppPadding.p20),
@@ -96,15 +96,15 @@ class _SplashViewState extends State<SplashView>
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    LocaleKeys.scheduler.tr(),
+                    LocaleKeys.dailyFlow.tr(),
                     style: getMediumLexendStyle(
-                        color: ColorManager.white, fontSize: FontSize.s22.sp),
+                        color: ColorManager.basicColor, fontSize: FontSize.s22.sp),
                   ).animate(delay: const Duration(seconds: 1)).scale(),
                   const SizedBox(height: AppSize.s10),
                   Text(
-                    LocaleKeys.scheduler.tr(),
+                    LocaleKeys.dailyFlowDesc.tr(),
                     style: getRegularLexendStyle(
-                        color: ColorManager.white, fontSize: FontSize.s18.sp),
+                        color: ColorManager.basicColor, fontSize: FontSize.s18.sp),
                   )
                       .animate()
                       .fade(

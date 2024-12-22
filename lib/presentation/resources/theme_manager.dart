@@ -128,7 +128,7 @@ ThemeData getApplicationTheme() {
           color: ColorManager.white,
           fontSize: FontSize.s10.sp,
         ),
-        backgroundColor: ColorManager.darkGreyBlue,
+        backgroundColor: ColorManager.waterBlue,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s02.dp),
         ),
@@ -166,7 +166,7 @@ ThemeData getApplicationTheme() {
 
     /// input decoration theme (text form field)
     inputDecorationTheme: InputDecorationTheme(
-      fillColor: Colors.white,
+      fillColor: ColorManager.lightGrey6,
       filled: true,
 
       /// content padding
@@ -184,18 +184,18 @@ ThemeData getApplicationTheme() {
       /// enabled
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: ColorManager.lightGrey2,
+          color: ColorManager.transparent,
           width: AppSize.s006.dp,
         ),
         borderRadius: BorderRadius.all(
-          Radius.circular(AppSize.s017.dp),
+          Radius.circular(AppSize.s02.dp),
         ),
       ),
 
       /// focused border style
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: ColorManager.lightGrey2,
+          color: ColorManager.transparent,
           width: AppSize.s006.dp,
         ),
         borderRadius: BorderRadius.all(

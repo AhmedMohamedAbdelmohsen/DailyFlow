@@ -1,7 +1,8 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
 abstract class  LocaleKeys {
-  static const scheduler = 'scheduler';
+  static const dailyFlow = 'dailyFlow';
+  static const dailyFlowDesc = 'dailyFlowDesc';
   static const welcomeTo = 'welcomeTo';
   static const loading = 'loading';
   static const ok = 'ok';
@@ -11,11 +12,13 @@ abstract class  LocaleKeys {
   static const allRight = 'allRight';
   static const startDesc = 'startDesc';
   static const userEmail = 'userEmail';
-  static const logIn = 'logIn';
+  static const enterEmail = 'enterEmail';
+  static const singIn = 'singIn';
   static const signUp = 'signUp';
   static const mobile = 'mobile';
   static const fullName = 'fullName';
   static const password = 'password';
+  static const enterPassword = 'enterPassword';
   static const confirmPassword = 'confirmPassword';
   static const newPassword = 'newPassword';
   static const confirmNewPassword = 'confirmNewPassword';
@@ -50,6 +53,6 @@ abstract class  LocaleKeys {
   static const arabic = 'arabic';
   static const english = 'english';
   static const loginError = 'loginError';
-  static const emptyEmail = 'emptyEmail';
-  static const emptyPassword = 'emptyPassword';
+  static const rememberMe = 'rememberMe';
+
 }

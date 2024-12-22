@@ -1,5 +1,6 @@
 {
   "dailyFlow": "Daily Flow",
+  "dailyFlowDesc": "Effortless Task Management",
   "welcomeTo": "Welcome to",
   "loading": "loading...",
   "ok": "Ok",
@@ -8,12 +9,14 @@
   "copyRight": "©",
   "allRight": "Daily Flow by Ahmed Abd El-mohsen",
   "startDesc": "Welcome,Let's get started",
-  "userName": "User Name",
-  "logIn": "Log in",
+  "userEmail": "Email",
+  "enterEmail": "Enter your email",
+  "singIn": "Sing In",
   "signUp": "Sign up",
   "mobile": "Mobile",
   "fullName": "Full Name",
   "password": "Password",
+  "enterPassword": "Enter your password",
   "confirmPassword": "Confirm Password",
   "newPassword": "New Password",
   "confirmNewPassword": "Confirm New Password",
@@ -49,5 +52,6 @@
   "english": "English",
   "loginError": "The user e-mail or password provided is incorrect.",
   "emptyPassword": "please enter password",
-  "emptyEmail": "please enter email"
+  "emptyEmail": "please enter email",
+  "rememberMe": "Remember Me"
 }

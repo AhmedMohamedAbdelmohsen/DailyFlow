@@ -1,6 +1,6 @@
 class Constants {
-  static const String baseUrl = 'https://testproj6.cloudiax.com/api';
-  static const String baseUrlWithoutApi = 'https://testproj6.cloudiax.com';
+  static const String baseUrl = 'https://todos.simpleapi.dev/api';
+  static const String baseUrlWithoutApi = 'https://todos.simpleapi.dev';
   static const String en_Us = 'en_US';
   static const String ar_AE = 'ar_AE';
   static const String empty = '';
@@ -17,4 +17,5 @@ class Constants {
   static const String playStoreUrl =
       'https://play.google.com/store/apps/details?id=com.ahmedabdelmohsen.dailyflow';
   static const String appStoreUrl = 'https://www.apple.com/eg/app-store/';
+  static const String apikey = 'apikey=31eb6a71-a8a6-4810-9d08-7b1ba5d24362';
 }

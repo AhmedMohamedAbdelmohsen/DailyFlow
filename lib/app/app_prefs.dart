@@ -9,10 +9,11 @@ const String PREFS_KEY_COMPANY_CODE = "PREFS_KEY_COMPANY_CODE";
 const String PREFS_KEY_FIRST_SPLASH_VIEWED = "PREFS_KEY_FIRST_SPLASH_VIEWED";
 // User Data
 const String TOKEN = 'TOKEN';
-const String USER_AR_NAME = 'USER_AR_NAME';
-const String USER_EN_NAME = 'USER_EN_NAME';
+const String USER_NAME = 'USER_NAME';
+const String USER_EMAIL = 'USER_EMAIL';
 const String USER_IMAGE = 'USER_IMAGE';
 const String PASSWORD_LENGTH = "PASSWORD_LENGTH";
+const String USER_ID = "USER_ID";
 
 class AppPreferences {
   final SharedPreferences _sharedPreferences;
@@ -72,6 +73,14 @@ class AppPreferences {
     return _sharedPreferences.getInt(PASSWORD_LENGTH) ?? 0;
   }
 
+  setUserId(int id) {
+    _sharedPreferences.setInt(USER_ID, id);
+  }
+
+  getUserId() {
+    return _sharedPreferences.getInt(USER_ID) ?? 0;
+  }
+
   setShowWelcomeBack() {
     _sharedPreferences.setBool(WELCOME_BACK_VIEWED, true);
   }
@@ -88,20 +97,20 @@ class AppPreferences {
     return _sharedPreferences.getString(TOKEN) ?? "";
   }
 
-  setUserArName(String name) async {
-    _sharedPreferences.setString(USER_AR_NAME, name);
+  setUserName(String name) async {
+    _sharedPreferences.setString(USER_NAME, name);
   }
 
-  getUserEnName() {
-    return _sharedPreferences.getString(USER_EN_NAME) ?? "";
+  getUserName() {
+    return _sharedPreferences.getString(USER_NAME) ?? "";
   }
 
-  setUserEnName(String name) async {
-    _sharedPreferences.setString(USER_EN_NAME, name);
+  setUserEmail(String name) async {
+    _sharedPreferences.setString(USER_EMAIL, name);
   }
 
-  getUserArName() {
-    return _sharedPreferences.getString(USER_AR_NAME) ?? "";
+  getUserEmail() {
+    return _sharedPreferences.getString(USER_EMAIL) ?? "";
   }
 
   setUserImage(String image) async {
@@ -116,8 +125,9 @@ class AppPreferences {
 
   Future<void> logout() async {
     _sharedPreferences.remove(PREFS_KEY_IS_LOGGED_IN);
-    _sharedPreferences.remove(USER_AR_NAME);
-    _sharedPreferences.remove(USER_EN_NAME);
+    _sharedPreferences.remove(USER_NAME);
+    _sharedPreferences.remove(USER_EMAIL);
+    _sharedPreferences.remove(USER_ID);
     _sharedPreferences.remove(USER_IMAGE);
     _sharedPreferences.remove(PASSWORD_LENGTH);
     _sharedPreferences.remove(TOKEN);

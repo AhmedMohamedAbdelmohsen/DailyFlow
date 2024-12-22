@@ -15,7 +15,7 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> ar_EGY = {
-  "scheduler": "المجدول",
+  "dailyFlow": "المجدول",
   "welcomeTo": "مرحبا بك في",
   "loading": "تحميل...",
   "ok": "موافق",
@@ -25,7 +25,7 @@ class CodegenLoader extends AssetLoader{
   "allRight": "المجدول لأحمد عبد المحسن",
   "startDesc": "مرحبًا ، فلنبدأ",
   "userEmail": "البريد الالكتروني للمستخدم",
-  "logIn": "تسجيل الدخول",
+  "singIn": "تسجيل الدخول",
   "signUp": "تسجيل",
   "mobile": "الهاتف",
   "fullName": "الاسم بالكامل",
@@ -62,21 +62,23 @@ class CodegenLoader extends AssetLoader{
   "account": "الحساب"
 };
 static const Map<String,dynamic> en_US = {
-  "scheduler": "Scheduler",
+  "dailyFlow": "Daily Flow",
   "welcomeTo": "Welcome to",
   "loading": "loading...",
   "ok": "Ok",
   "retryAgain": "Retry again",
   "noRouteFound": "NoRouteFound",
   "copyRight": "©",
-  "allRight": "Scheduler by Ahmed Abd El-mohsen",
+  "allRight": "Daily Flow by Ahmed Abd El-mohsen",
   "startDesc": "Welcome,Let's get started",
   "userEmail": "User Email",
-  "logIn": "Log in",
+  "enterEmail": "Enter your email",
+  "singIn": "Log In",
   "signUp": "Sign up",
   "mobile": "Mobile",
   "fullName": "Full Name",
   "password": "Password",
+  "enterPassword": "Enter your password",
   "confirmPassword": "Confirm Password",
   "newPassword": "New Password",
   "confirmNewPassword": "Confirm New Password",

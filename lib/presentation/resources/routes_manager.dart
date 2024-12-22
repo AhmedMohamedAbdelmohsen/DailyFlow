@@ -27,8 +27,10 @@ class RouteGenerator {
         initLoginModule();
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.homeRoute:
+        initTaskModule();
         return MaterialPageRoute(builder: (_) => const HomeView());
       case Routes.addTaskView:
+        initAddTaskModule();
         return MaterialPageRoute(builder: (_) => const AddScheduleView());
       default:
         return unDefinedRoute();

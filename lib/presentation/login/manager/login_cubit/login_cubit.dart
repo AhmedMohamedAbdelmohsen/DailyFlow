@@ -32,9 +32,10 @@ class LoginCubit extends Cubit<LoginState> {
 
   Future<void> _saveUserDataLocal(LoginModel data, int passwordLength) async {
     appPreferences.setUserLoggedIn(true);
-
-    appPreferences.setUserToken(data.jwtToken);
-
+    appPreferences.setUserId(data.id.toInt());
+    appPreferences.setUserName(data.name);
+    appPreferences.setUserEmail(data.email);
+    appPreferences.setUserToken(data.token);
     appPreferences.setPasswordLength(passwordLength);
     resetModules();
   }
@@ -57,9 +58,9 @@ class LoginCubit extends Cubit<LoginState> {
   String? _validateText(String text, int type) {
     if (text.isEmpty) {
       if (type == 0 /*email validation*/) {
-        return LocaleKeys.emptyEmail.tr();
+        return LocaleKeys.enterEmail.tr();
       } else {
-        return LocaleKeys.emptyPassword.tr();
+        return LocaleKeys.enterPassword.tr();
       }
     }
     return null;
