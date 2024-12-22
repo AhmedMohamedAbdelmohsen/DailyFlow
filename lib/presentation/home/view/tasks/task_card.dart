@@ -54,7 +54,7 @@ class _TaskCardState extends State<TaskCard> {
                         ),
                          SizedBox(height: AppSize.s2.h),
                         Text(
-                         widget.model.startTime,
+                         widget.model.startTime + ' ${widget.model.date}',
                           style:  getMediumLexendStyle(
                             fontSize: FontSize.s14,
                             color: ColorManager.midGrey2,

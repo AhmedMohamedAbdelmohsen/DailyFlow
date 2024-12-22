@@ -1,5 +1,8 @@
+import 'package:daily_flow/app/di.dart';
+import 'package:daily_flow/app/extension.dart';
 import 'package:daily_flow/app/functions.dart';
 import 'package:daily_flow/generated/locale_keys.g.dart';
+import 'package:daily_flow/presentation/home/manager/task_cubit.dart';
 import 'package:daily_flow/presentation/resources/assets_manager.dart';
 import 'package:daily_flow/presentation/resources/color_manager.dart';
 import 'package:daily_flow/presentation/resources/font_manager.dart';
@@ -11,7 +14,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 
-import 'task_view.dart';
+import 'tasks/task_view.dart';
 import 'widgets/circular_border_icon_button.dart';
 
 class HomeView extends StatelessWidget {
@@ -49,7 +52,8 @@ class UserGreetingWidget extends StatefulWidget {
 class _UserGreetingWidgetState extends State<UserGreetingWidget> {
   final EasyInfiniteDateTimelineController _controller =
       EasyInfiniteDateTimelineController();
-  DateTime _focusDate = DateTime.now();
+  DateTime focusDate = DateTime.now();
+  TaskCubit taskCubit = instance<TaskCubit>();
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +120,7 @@ class _UserGreetingWidgetState extends State<UserGreetingWidget> {
             EasyInfiniteDateTimeLine(
               controller: _controller,
               firstDate: DateTime.now(),
-              focusDate: _focusDate,
+              focusDate: focusDate,
               lastDate: DateTime(2025),
               activeColor: ColorManager.waterBlue,
               showTimelineHeader: true,
@@ -158,12 +162,14 @@ class _UserGreetingWidgetState extends State<UserGreetingWidget> {
               },
               onDateChange: (selectedDate) {
                 setState(() {
-                  _focusDate = selectedDate;
+                  focusDate = selectedDate;
                 });
+                taskCubit.getTasksList(context, focusDate.defaultToSend());
               },
             ),
             SizedBox(height: AppSize.s3.h),
-            TaskView()
+            TaskView(
+                taskCubit: taskCubit, selectedDate: focusDate.defaultToSend())
           ],
         ),
       ),

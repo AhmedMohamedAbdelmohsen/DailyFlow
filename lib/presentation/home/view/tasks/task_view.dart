@@ -7,58 +7,61 @@ import 'package:daily_flow/presentation/widgets/empty_list.dart';
 import 'package:daily_flow/presentation/widgets/refresh_indicator_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
-import 'widgets/task_shimmer.dart';
+import 'task_shimmer.dart';
 
 class TaskView extends StatefulWidget {
-  TaskView({super.key});
+ final TaskCubit taskCubit;
+ final String selectedDate;
+
+  TaskView({super.key,required this.taskCubit,required this.selectedDate});
 
   @override
   State<TaskView> createState() => _TaskViewState();
 }
 
 class _TaskViewState extends State<TaskView> {
-  TaskCubit taskCubit = instance<TaskCubit>();
 
   late List<TaskModel> tasks;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<TaskCubit>(
-        create: (BuildContext context) => taskCubit..getTasksList(context),
+        create: (BuildContext context) => widget.taskCubit..getTasksList(context,widget.selectedDate),
         child: BlocConsumer<TaskCubit, TaskState>(
           builder: (BuildContext context, TaskState state) {
             if (state is TaskLoading) {
               return Center(
                 child: ListView.builder(
+                    shrinkWrap: true,
                     padding: const EdgeInsets.all(AppPadding.p18),
                     itemCount: 3,
                     itemBuilder: (context, index) {
                       return TaskShimmer(
-                        showStartVertlLine: false,
-                        showSubLine: false,
+                        showStartVertlLine: true,
+                        showSubLine: true,
                       );
                     }),
               );
             } else if (state is TaskSuccess) {
               tasks = state.tasksList;
+
               return RefreshWidget(
                   onRefresh: () async {
                     refreshFunc(context);
                   },
                   widgetChild: (tasks.isNotEmpty)
-                      ? Container(
-                          height: 250,
-                          child: ListView.builder(
-                              physics: const AlwaysScrollableScrollPhysics(),
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: AppPadding.p6,
-                                  horizontal: AppPadding.p12),
-                              itemCount: tasks.length,
-                              itemBuilder: (context, index) {
-                                return TaskCard(model: tasks[index]);
-                              }),
-                        )
+                      ? ListView.builder(
+                        shrinkWrap: true,
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: AppPadding.p6,
+                              horizontal: AppPadding.p12),
+                          itemCount: tasks.length,
+                          itemBuilder: (context, index) {
+                            return TaskCard(model: tasks[index]);
+                          })
                       : EmptyListWidget(errorSubTitle: ''));
             } else if (state is TaskFailure) {
               return EmptyListWidget(
@@ -72,6 +75,6 @@ class _TaskViewState extends State<TaskView> {
   }
 
   refreshFunc(BuildContext context) {
-    taskCubit.getTasksList(context);
+    widget.taskCubit.getTasksList(context,widget.selectedDate);
   }
 }

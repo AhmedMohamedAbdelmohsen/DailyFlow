@@ -52,21 +52,6 @@ class TaskShimmer extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                width: showStartVertlLine
-                                    ? AppSize.s5.h
-                                    : AppSize.s7.h,
-                                height: showStartVertlLine
-                                    ? AppSize.s5.h
-                                    : AppSize.s7.h,
-                                margin: const EdgeInsetsDirectional.only(
-                                    start: AppMargin.m8, end: AppMargin.m8),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius:
-                                      BorderRadius.circular(AppSize.s6),
-                                ),
-                              ),
                               Expanded(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -88,13 +73,11 @@ class TaskShimmer extends StatelessWidget {
                                           visible: showSubLine,
                                           child: Expanded(
                                               child: GlobalShimmerCard(
-                                                  size: Size(AppSize.s15.w,
-                                                      AppSize.s6))),
+                                                  size: Size(AppSize.s10.w,
+                                                      AppSize.s10))),
                                         ),
                                       ],
                                     ),
-                                    GlobalShimmerCard(
-                                        size: Size(AppSize.s60.w, AppSize.s6)),
                                     GlobalShimmerCard(
                                         size: Size(AppSize.s40.w, AppSize.s6)),
                                   ],

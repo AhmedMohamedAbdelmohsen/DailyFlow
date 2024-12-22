@@ -27,7 +27,7 @@ class EmptyListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ListView(
-        // shrinkWrap: true,
+        shrinkWrap: true,
         physics: physic,
         children: [
           SvgPicture.asset(
