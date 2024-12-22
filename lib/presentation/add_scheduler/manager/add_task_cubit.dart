@@ -20,6 +20,7 @@ class AddTaskCubit extends Cubit<AddTaskState> {
 
   addTask() async {
     int userId = _appPreferences.getUserId();
+    requestModel.completed = true;
     emit(AddTaskLoading());
     (await _createTaskUseCase.execute(TaskMainModel(userId, requestModel)))
         .fold((failure) {
@@ -30,6 +31,7 @@ class AddTaskCubit extends Cubit<AddTaskState> {
   }
 
   void updateTaskName(String newText) {
+    requestModel.description = newText;
     final error = _validateText(newText, 1);
     emit(TaskNameValidationState(text: newText, error: error));
   }
@@ -39,16 +41,14 @@ class AddTaskCubit extends Cubit<AddTaskState> {
     emit(PriorityValidationState(text: newText, error: error));
   }
 
-  void isAllValid(String name, String pass) {
+  void isAllValid(String name) {
     emit(CreateTaskIsAllValidState(
-        _validateText(name, 0) == null && _validateText(pass, 1) == null));
+        _validateText(name, 0) == null));
   }
 
   String? _validateText(String text, int type) {
     if (text.isEmpty) {
       if (type == 0 /*name validation*/) {
-        return LocaleKeys.priority.tr();
-      } else {
         return LocaleKeys.taskName.tr();
       }
     }

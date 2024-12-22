@@ -13,7 +13,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TaskCard extends StatefulWidget {
-  final TaskModel model;
+  final TaskDataModel model;
 
   const TaskCard({super.key, required this.model});
 

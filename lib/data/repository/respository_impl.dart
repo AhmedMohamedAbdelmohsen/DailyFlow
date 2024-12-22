@@ -50,7 +50,7 @@ class RepositoryImpl extends Repository {
       try {
         // its connected to internet, its safe to call API
         final response = await _remoteDataSource.addTask(id, request);
-        if (response.userId != 0) {
+        if (response.id != 0) {
           // success return data
           return Right(response.toDomain());
         } else {
@@ -69,7 +69,7 @@ class RepositoryImpl extends Repository {
   }
 
   @override
-  Future<Either<Failure, List<TaskModel>>> getAllTasks(int id) async {
+  Future<Either<Failure, List<TaskDataModel>>> getAllTasks(int id) async {
     if (await _networkInfo.isConnect) {
       try {
         // its connected to internet, its safe to call API
@@ -77,7 +77,7 @@ class RepositoryImpl extends Repository {
         if (response != null) {
           // success return data
           return Right((response.map((data) => data.toDomain()))
-              .cast<TaskModel>()
+              .cast<TaskDataModel>()
               .toList());
         } else {
           // failure --return business error

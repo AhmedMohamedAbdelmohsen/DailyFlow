@@ -19,7 +19,7 @@ class TaskResponse {
   @JsonKey(name: 'category')
   String? category;
   @JsonKey(name: 'completed')
-  num? completed;
+  bool? completed;
   @JsonKey(name: 'author')
   String? author;
   @JsonKey(name: 'message')
@@ -44,6 +44,50 @@ class TaskResponse {
       _$TaskResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$TaskResponseToJson(this);
+}
+
+@JsonSerializable()
+class TaskDataResponse {
+  @JsonKey(name: 'id')
+  num? id;
+  @JsonKey(name: 'user_id')
+  num? userId;
+  @JsonKey(name: 'description')
+  String? description;
+  @JsonKey(name: 'date')
+  String? date;
+  @JsonKey(name: 'startTime')
+  String? startTime;
+  @JsonKey(name: 'endTime')
+  String? endTime;
+  @JsonKey(name: 'category')
+  String? category;
+  @JsonKey(name: 'completed')
+  num? completed;
+  @JsonKey(name: 'author')
+  String? author;
+  @JsonKey(name: 'message')
+  String? message;
+  @JsonKey(name: 'meta')
+  MetaResponse? meta;
+
+  TaskDataResponse(
+      {this.id,
+      this.userId,
+      this.description,
+      this.date,
+      this.startTime,
+      this.endTime,
+      this.category,
+      this.completed,
+      this.author,
+      this.message,
+      this.meta});
+
+  factory TaskDataResponse.fromJson(Map<String, dynamic> json) =>
+      _$TaskDataResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TaskDataResponseToJson(this);
 }
 
 @JsonSerializable()

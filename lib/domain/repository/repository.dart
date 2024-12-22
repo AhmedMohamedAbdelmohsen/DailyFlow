@@ -10,5 +10,5 @@ abstract class Repository {
 
   Future<Either<Failure, TaskModel>> addTask(int id, TaskResponse request);
 
-  Future<Either<Failure, List<TaskModel>>> getAllTasks(int id);
+  Future<Either<Failure, List<TaskDataModel>>> getAllTasks(int id);
 }

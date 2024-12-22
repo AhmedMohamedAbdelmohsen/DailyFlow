@@ -6,6 +6,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class PrioritySelector extends StatefulWidget {
+  final ValueChanged<String> onPriorityChanged;
+
+  PrioritySelector({required this.onPriorityChanged});
+
   @override
   _PrioritySelectorState createState() => _PrioritySelectorState();
 }
@@ -47,15 +51,19 @@ class _PrioritySelectorState extends State<PrioritySelector> {
               ),
             ),
             const SizedBox(width: AppSize.s8),
-            Text(label,style: getRegularLexendStyle(color: Colors.black),),
+            Text(label, style: getRegularLexendStyle(color: Colors.black)),
           ],
         ),
         labelStyle: getRegularLexendStyle(color: isSelected ? Colors.white : ColorManager.midBlack),
         selected: isSelected,
         onSelected: (selected) {
-          setState(() {
-            _selectedPriority = label;
-          });
+          if (selected) {
+            setState(() {
+              _selectedPriority = label;
+            });
+            // Notify parent widget of the priority change
+            widget.onPriorityChanged(_selectedPriority);
+          }
         },
         backgroundColor: isSelected ? color : ColorManager.lightGrey6,
       ),

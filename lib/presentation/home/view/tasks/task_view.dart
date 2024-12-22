@@ -23,7 +23,7 @@ class TaskView extends StatefulWidget {
 
 class _TaskViewState extends State<TaskView> {
 
-  late List<TaskModel> tasks;
+  late List<TaskDataModel> tasks;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,9 @@ class _TaskViewState extends State<TaskView> {
                               horizontal: AppPadding.p12),
                           itemCount: tasks.length,
                           itemBuilder: (context, index) {
-                            return TaskCard(model: tasks[index]);
+                            return Container(
+                                margin: EdgeInsets.only(bottom: AppSize.s2.h),
+                                child: TaskCard(model: tasks[index]));
                           })
                       : EmptyListWidget(errorSubTitle: ''));
             } else if (state is TaskFailure) {

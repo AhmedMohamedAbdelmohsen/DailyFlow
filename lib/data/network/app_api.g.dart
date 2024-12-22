@@ -72,13 +72,13 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<List<TaskResponse>> getAllTasks(id) async {
+  Future<List<TaskDataResponse>> getAllTasks(id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<TaskResponse>>(Options(
+        .fetch<List<dynamic>>(_setStreamType<List<TaskDataResponse>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -91,7 +91,8 @@ class _AppServiceClient implements AppServiceClient {
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
-        .map((dynamic i) => TaskResponse.fromJson(i as Map<String, dynamic>))
+        .map(
+            (dynamic i) => TaskDataResponse.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }

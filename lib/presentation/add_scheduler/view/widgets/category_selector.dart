@@ -17,38 +17,46 @@ class _CategorySelectorState extends State<CategorySelector> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          LocaleKeys.categories.tr(),
-          style: getRegularLexendStyle(
-            color: ColorManager.midBlack,
-            fontSize: FontSize.s18.sp,
+    return Container(
+      decoration: const BoxDecoration(
+        color: ColorManager.lightGrey6,
+        borderRadius: BorderRadius.all( Radius.circular(AppSize.s20)),
+      ),
+      padding: const EdgeInsets.all(AppPadding.p20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            LocaleKeys.categories.tr(),
+            style: getRegularLexendStyle(
+              color: ColorManager.midBlack,
+              fontSize: FontSize.s18.sp,
+            ),
           ),
-        ),
-        SizedBox(height: AppSize.s2.h),
-        Row(
-          children: [
-            _buildCategoryChip(LocaleKeys.work.tr(), Colors.blue,
-                isSelected: _selectedCategory == LocaleKeys.work.tr()),
-            SizedBox(width: AppSize.s4.h),
-            _buildCategoryChip(LocaleKeys.personal.tr(), Colors.purple,
-                isSelected: _selectedCategory == LocaleKeys.personal.tr()),
-            SizedBox(width: AppSize.s2.w),
-            CircleAvatar(
-              radius: AppSize.s18,
-              backgroundColor: Colors.grey[300],
-              child: Center(
-                child: IconButton(
-                  icon: const Icon(Icons.add, color: Colors.black),
-                  onPressed: () {},
+          SizedBox(height: AppSize.s2.h),
+          Row(
+            children: [
+              _buildCategoryChip(LocaleKeys.work.tr(), Colors.blue,
+                  isSelected: _selectedCategory == LocaleKeys.work.tr()),
+              SizedBox(width: AppSize.s2.h),
+              _buildCategoryChip(LocaleKeys.personal.tr(), Colors.purple,
+                  isSelected: _selectedCategory == LocaleKeys.personal.tr()),
+              SizedBox(width: AppSize.s2.w),
+              CircleAvatar(
+                radius: AppSize.s20,
+                backgroundColor: Colors.grey[300],
+                child: Center(
+                  child: IconButton(
+                    icon: const Icon(Icons.add, color: Colors.black),
+                    onPressed: () {},
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
-      ],
+            ],
+          ),
+        ],
+      ),
     );
   }
 
@@ -64,7 +72,7 @@ class _CategorySelectorState extends State<CategorySelector> {
       label: Text(
         label,
         style: getRegularLexendStyle(
-          color: isSelected ?  ColorManager.midBlack:Colors.white ,
+          color: isSelected ? ColorManager.midBlack : Colors.white,
         ),
       ),
       selected: isSelected,

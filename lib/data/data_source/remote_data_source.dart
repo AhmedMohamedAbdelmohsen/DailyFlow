@@ -8,7 +8,7 @@ abstract class RemoteDataSource {
 
   Future<TaskResponse> addTask(int id, TaskResponse request);
 
-  Future<List<TaskResponse>> getAllTasks(int id);
+  Future<List<TaskDataResponse>> getAllTasks(int id);
 }
 
 class RemoteDataSourceImpl extends RemoteDataSource {
@@ -27,7 +27,7 @@ class RemoteDataSourceImpl extends RemoteDataSource {
   }
 
   @override
-  Future<List<TaskResponse>> getAllTasks(int id) {
+  Future<List<TaskDataResponse>> getAllTasks(int id) {
     return _appServiceClient.getAllTasks(id);
   }
 }

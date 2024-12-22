@@ -19,5 +19,5 @@ abstract class AppServiceClient {
       @Path("id") int id, @Body() TaskResponse request);
 
   @GET("/users/{id}/todos?${Constants.apikey}")
-  Future<List<TaskResponse>> getAllTasks(@Path("id") int id);
+  Future<List<TaskDataResponse>> getAllTasks(@Path("id") int id);
 }

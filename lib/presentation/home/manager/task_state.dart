@@ -8,7 +8,7 @@ class TaskInitial extends TaskState {}
 class TaskLoading extends TaskState {}
 
 class TaskSuccess extends TaskState {
-  final List<TaskModel> tasksList;
+  final List<TaskDataModel> tasksList;
 
   TaskSuccess(this.tasksList);
 }

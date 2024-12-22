@@ -16,13 +16,43 @@ class TaskModel {
   String startTime;
   String endTime;
   String category;
-  num completed;
+  bool completed;
   String author;
   String message;
   Color? color;
   MetaModel? meta;
 
   TaskModel(
+    this.id,
+    this.userId,
+    this.description,
+    this.date,
+    this.startTime,
+    this.endTime,
+    this.category,
+    this.completed,
+    this.author,
+    this.message,
+    this.meta,
+      {
+    this.color,
+  });
+}
+class TaskDataModel {
+  num id;
+  num userId;
+  String description;
+  String date;
+  String startTime;
+  String endTime;
+  String category;
+  num completed;
+  String author;
+  String message;
+  Color? color;
+  MetaModel? meta;
+
+  TaskDataModel(
     this.id,
     this.userId,
     this.description,

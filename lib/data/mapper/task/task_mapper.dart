@@ -13,6 +13,24 @@ extension TaskResponseMapper on TaskResponse? {
       this?.startTime.orEmpty() ?? Constants.empty,
       this?.endTime.orEmpty() ?? Constants.empty,
       this?.category.orEmpty() ?? Constants.empty,
+      this?.completed ?? false,
+      this?.author.orEmpty() ?? Constants.empty,
+      this?.message.orEmpty() ?? Constants.empty,
+      this?.meta.toDomain(),
+    );
+  }
+}
+
+extension TaskdataResponseMapper on TaskDataResponse? {
+  TaskDataModel toDomain() {
+    return TaskDataModel(
+      this?.id.orZero() ?? Constants.zero,
+      this?.userId.orZero() ?? Constants.zero,
+      this?.description.orEmpty() ?? Constants.empty,
+      this?.date.orEmpty() ?? Constants.empty,
+      this?.startTime.orEmpty() ?? Constants.empty,
+      this?.endTime.orEmpty() ?? Constants.empty,
+      this?.category.orEmpty() ?? Constants.empty,
       this?.completed.orZero() ?? Constants.zero,
       this?.author.orEmpty() ?? Constants.empty,
       this?.message.orEmpty() ?? Constants.empty,
