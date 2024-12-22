@@ -57,5 +57,22 @@
   "hello": "Hello,",
   "emptyListDesc": "Click on the “add task” button at the bottom to create a new task",
   "empty": "Empty",
-  "expiredSession": "Your session has expired, Please Login again"
+  "expiredSession": "Your session has expired, Please Login again",
+  "errorWhats": "Could not launch WhatsApp",
+  "copyClipboard": "Copied to clipboard",
+  "newTask": "New Task",
+  "end": "End",
+  "priority": "Priority",
+  "low": "Low",
+  "med": "Med",
+  "high": "High",
+  "categories": "Categories",
+  "work": "Work",
+  "personal": "Personal",
+  "taskName": "Task Name",
+  "time": "Time",
+  "date": "Date",
+  "cancel": "Cancel",
+  "add": "Add",
+  "createTask": "Create Task"
 }

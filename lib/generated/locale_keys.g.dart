@@ -58,5 +58,21 @@ abstract class  LocaleKeys {
   static const empty = 'empty';
   static const emptyListDesc = 'emptyListDesc';
   static const expiredSession = 'expiredSession';
-
+  static const errorWhats = 'errorWhats';
+  static const copyClipboard = 'copyClipboard';
+  static const newTask = 'newTask';
+  static const taskName = 'taskName';
+  static const end = 'end';
+  static const priority = 'priority';
+  static const low = 'low';
+  static const med = 'med';
+  static const high = 'high';
+  static const categories = 'categories';
+  static const work = 'work';
+  static const personal = 'personal';
+  static const time = 'time';
+  static const date = 'date';
+  static const cancel = 'cancel';
+  static const add = 'add';
+  static const createTask = 'createTask';
 }

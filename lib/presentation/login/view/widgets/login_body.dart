@@ -10,7 +10,7 @@ import 'package:daily_flow/presentation/resources/routes_manager.dart';
 import 'package:daily_flow/presentation/resources/styles_manager.dart';
 import 'package:daily_flow/presentation/resources/values_manager.dart';
 import 'package:daily_flow/presentation/widgets/custom_loading.dart';
-import 'package:daily_flow/presentation/widgets/custom_text_field.dart';
+import 'package:daily_flow/presentation/widgets/custom_auth_text_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

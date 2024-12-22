@@ -2,6 +2,7 @@ import 'package:daily_flow/app/di.dart';
 import 'package:daily_flow/app/extension.dart';
 import 'package:daily_flow/app/functions.dart';
 import 'package:daily_flow/generated/locale_keys.g.dart';
+import 'package:daily_flow/presentation/add_scheduler/view/add_scheduler_view.dart';
 import 'package:daily_flow/presentation/home/manager/task_cubit.dart';
 import 'package:daily_flow/presentation/resources/assets_manager.dart';
 import 'package:daily_flow/presentation/resources/color_manager.dart';
@@ -34,7 +35,9 @@ class HomeView extends StatelessWidget {
           Icons.add,
           color: Colors.white,
         ),
-        onPressed: () {},
+        onPressed: () {
+          showNewTaskBottomSheet(context);
+        },
       ),
     );
   }

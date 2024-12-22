@@ -18,3 +18,24 @@ class AddTaskFailure extends AddTaskState {
 
   AddTaskFailure(this.errorMsg);
 }
+
+
+class TaskNameValidationState extends AddTaskState {
+  final String text;
+  final String? error;
+
+  TaskNameValidationState({required this.text, required this.error});
+}
+
+class PriorityValidationState extends AddTaskState {
+  final String text;
+  final String? error;
+
+  PriorityValidationState({required this.text, required this.error});
+}
+
+class CreateTaskIsAllValidState extends AddTaskState {
+  final bool isAllValid;
+
+  CreateTaskIsAllValidState(this.isAllValid);
+}

@@ -14,6 +14,7 @@ class IconAssets {
   static const calendar = "$iconPath/calendar.svg";
   static const notification = "$iconPath/notification.svg";
   static const avatar = "$iconPath/avatar.svg";
+  static const time = "$iconPath/time.svg";
 }
 
 class JsonAssets {
